@@ -1,0 +1,26 @@
+/* 本文件描述了不同数据在[神经网络、随机森林、RWN]下表现
+ * 分别使用三个指标进行评测。并记录了训练轮次等信息。
+ * 所有模型的训练集（train）和测试集（test）均为8/2分。
+ */
+
+
+slice_localization_data.csv:
+    nn:
+        program_prefix: "sld_nn"
+        program_files: [data.py, model.py, train.py, eval.py]
+        model_name: "model.pth"
+        epoch: 500
+        r^2: 0.9693
+        mse: 15.2872
+        rmse: 3.9099
+    rf:
+        program_prefix: "sld_rf"
+        program_files: [data.py, model.py]
+        model_name: "model.pkl"
+        n_estimators: 10
+        R²: 0.9947
+        mse: 2.644719490990368
+        rmse: 1.6263
+        
+    rwn:
+    
