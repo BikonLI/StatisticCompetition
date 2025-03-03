@@ -1,6 +1,6 @@
 import torch
 from sklearn.metrics import mean_squared_error, r2_score
-from model import *
+from model import RegressionNet
 from data import *
 import numpy as np
 
@@ -8,6 +8,8 @@ import numpy as np
 # 将数据转换为张量，并使用 CPU
 
 # 使模型处于评估模式
+model = RegressionNet()
+model.load()
 model.eval()
 
 # 使用模型进行预测

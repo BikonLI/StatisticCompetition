@@ -23,9 +23,13 @@ class CustomRWN(RWN):
         
         # 训练随机森林
         params_rf = {'min_samples_split': [2, 3, 4, 5, 6, 7]}
-        self.rf_model = RandomForestRegressor(n_estimators=100)
+        print(1)
+        self.rf_model = RandomForestRegressor(n_estimators=2)
+        print(2)
         reg_rf = GridSearchCV(self.rf_model, params_rf)
+        print(3)
         reg_rf.fit(x_train, y_train)
+        print(4)
         self.rf_model = reg_rf.best_estimator_
         self.rf_model.fit(x_train, y_train)
         
